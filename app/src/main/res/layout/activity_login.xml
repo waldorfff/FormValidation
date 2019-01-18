@@ -18,17 +18,16 @@
         android:layout_gravity="center_vertical">
 
 
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Username" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username"/>
-
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Username" />
 
         <TextView
             android:layout_width="match_parent"
@@ -47,6 +46,13 @@
             android:layout_height="wrap_content"
             android:text="LOGIN"
             android:id="@+id/btnLogin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:gravity="center"
+            android:id="@+id/tvCreateAccount"/>
 
     </LinearLayout>
 

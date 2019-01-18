@@ -1,10 +1,12 @@
 package com.palmagil.formvalidation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.palmagil.formvalidation.R;
@@ -14,6 +16,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     // Initialization
     EditText etUsername, etPassword;
     Button btnLogin;
+    TextView tvCreateAccount;
     String username, password;
     int formsuccess;
 
@@ -23,13 +26,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Find objects using its ID
+
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this); //
+        btnLogin.setOnClickListener(this);
+        tvCreateAccount = findViewById(R.id.tvCreateAccount);
 
-        // Event listener for LOGIN button
+        btnLogin.setOnClickListener(this);
+        tvCreateAccount.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -58,6 +65,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (formsuccess == 2) {
                     Toast.makeText(this, "Form Successfully Validated", Toast.LENGTH_SHORT).show();
                 }
+                break;
+
+            case R.id.tvCreateAccount:
+                Intent signup = new Intent(this, SignupActivity.class);
+                startActivity (signup);
                 break;
         }
     }
